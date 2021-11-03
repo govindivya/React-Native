@@ -1,0 +1,33 @@
+export const User=[
+    {
+        user:"Riya",
+        email:"riya@gmail.com",
+        url:require("C:/Users/hp/Desktop/AllFiles/NativeApps/g-insta/data/Images/user1.jfif")
+    },
+    {
+        user:"Reyan",
+        email:"reyan123@gmail.com",
+        url:require("C:/Users/hp/Desktop/AllFiles/NativeApps/g-insta/data/Images/user2.jfif")
+    },
+    {
+        user:"Luran",
+        email:"luranK@gmail.com",
+        url:require("C:/Users/hp/Desktop/AllFiles/NativeApps/g-insta/data/Images/user3.jfif")
+    },
+    {
+        user:"Vineil",
+        email:"Vineil1234@gmail.com",
+        url:require("C:/Users/hp/Desktop/AllFiles/NativeApps/g-insta/data/Images/user4.jfif")
+    },
+    {
+        user:"Johnson",
+        email:"jonny@gmail.com",
+        url:require("C:/Users/hp/Desktop/AllFiles/NativeApps/g-insta/data/Images/user5.jfif")
+    },
+    {
+        user:"Stem",
+        email:"stemmer@gmail.com",
+        url:require("C:/Users/hp/Desktop/AllFiles/NativeApps/g-insta/data/Images/user5.jfif")
+    },
+   
+]
