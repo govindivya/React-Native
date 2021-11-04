@@ -24,8 +24,8 @@ export const imageIcons = [
   },
   {
     name: "Profile",
-    active: require("../../data/Images/user1.jfif"),
-    inactive: require("../../data/Images/user1.jfif"),
+    active: require("../../data/Images/user1.jpeg"),
+    inactive: require("../../data/Images/user1.jpeg"),
   },
 ];
 
