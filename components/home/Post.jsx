@@ -14,20 +14,20 @@ import { Divider } from "react-native-elements";
 const footerIcon = [
   {
     name: "Like",
-    imageUrl: require("../../assets/images/like--v1.png"),
-    likedImageUrl: require("../../assets/images/heart.png"),
+    imageUrl:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/like--v1.png",
+    likedImageUrl:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/heart.png",
   },
   {
     name: "Comment",
-    imageUrl: require("../../assets/images/chaticon.png"),
+    imageUrl:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/chaticon.png",
   },
   {
     name: "Share",
-    imageUrl: require("../../assets/images/instashare.png"),
+    imageUrl:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/instashare.png"
   },
   {
     name: "Save",
-    imageUrl: require("../../assets/images/shaver.png"),
+    imageUrl:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/shaver.png"
   },
 ];
 
@@ -37,7 +37,7 @@ const Post = ({ post }) => {
     setDisplayComment(!displayComment);
   }
   return (
-    <View style={{ marginBottom: 30, padding: 2 }}>
+    <View style={{ marginBottom:50, padding: 2 }}>
       <Divider
         width={1}
         orientation="horizontal"
@@ -76,7 +76,7 @@ const PostHeader = ({ post }) => {
           alignItems: "center",
         }}
       >
-        <Image source={post.profile_picture} style={styles.profileImage} />
+        <Image source={{uri:post.profile_picture}} style={styles.profileImage} />
         <Text style={{ color: "white", marginLeft: 5, fontWeight: 600 }}>
           {post.user}
         </Text>
@@ -92,7 +92,7 @@ const PostImage = ({ post }) => {
   return (
     <View style={{ padding: 5, width: "100%", height: 450 }}>
       <Image
-        source={post.imageUrl}
+        source={{uri:post.imageUrl}}
         style={{
           height: "100%",
           resizeMode: "contain",
@@ -117,7 +117,7 @@ const PostFooter = () => (
 
 const Icons = ({ imgStyle, imgUrl }) => (
   <TouchableOpacity>
-    <Image style={imgStyle} source={imgUrl} />
+    <Image style={imgStyle} source={{uri:imgUrl}} />
   </TouchableOpacity>
 );
 
@@ -142,7 +142,6 @@ const CommentSection=({post,handleDisplay,displayComment})=>{
  for(let key in post.comments){
    a.push(post.comments[key]);
  }
- console.log(a.length)
   return  <View>
   <Text style={{color:"gray",cursor:"pointer"}} onClick={handleDisplay}>{
    !displayComment?( a.length!=0?(a.length>1?`View all ${a.length} comments`:"View 1 comment"):"") :"Close comment section" }</Text>
@@ -156,7 +155,7 @@ const Comment=({post})=>(
     <View key={index}>
     <Text style={{color:"white",fontWeight:600}}>{item.user}</Text>
     <View style={{display:"flex",flexDirection:"row",marginVertical:5}}>
-      <Image source={item.userImage} style={{width:30,height:30,borderRadius:"50%"}}/>
+      <Image source={{uri:item.userImage}} style={{width:30,height:30,borderRadius:15}}/>
       <Text style={{color:"gray",fontWeight:400,marginHorizontal:10}}>{item.comment}</Text>
     </View>
    </View>
@@ -168,7 +167,7 @@ const styles = StyleSheet.create({
   profileImage: {
     width: 40,
     height: 40,
-    borderRadius: "50%",
+    borderRadius:20,
     borderWidth: 1,
     borderColor: "#ff8501",
   },

@@ -7,8 +7,7 @@ import { values } from "lodash";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import validUrl from 'valid-url'
 
-const PLACEHOLDER_IMG = require("../../assets/images/thumbnail.jfif");
-
+const PLACEHOLDER_IMG = "https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/thumbnail.jfif"
 const uploadPostSchema = yup.object().shape({
   imageUrl: yup.string().url().required("A url is required"),
   caption: yup.string().max(2200, "Caption has reached to it's limit"),
@@ -41,7 +40,7 @@ const FormikPostUploader = ({navigation}) => {
               flexDirection: "row",
             }}
           >
-            <Image source={thumbnailUrl ? validUrl.isUri(thumbnailUrl) :PLACEHOLDER_IMG} style={styles.image} />
+            <Image source={{uri:(thumbnailUrl ? validUrl.isUri(thumbnailUrl) :PLACEHOLDER_IMG)}} style={styles.image} />
             <TextInput
               placeholder="write a caption"
               placeholderTextColor="gray"

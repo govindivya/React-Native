@@ -9,7 +9,7 @@ const Stories = () => {
             {
                 User.map((story,index)=>(
                 <View key={index} style={{alignItems:"center"}}>
-                    <Image source={story.url} style={styles.story}/>
+                    <Image source={{uri:story.url}} style={styles.story}/>
                     <Text style={{color:"white"}}>{
                      story.user.length > 11 ?story.user.slice(0,10)+"...":story.user
                     }</Text>
@@ -25,7 +25,7 @@ const styles=StyleSheet.create({
  story:{
     width:70,
     height:70,
-    borderRadius:"50%",
+    borderRadius:35,
     marginRight:5,
     marginLeft:5,
     borderWidth:3,

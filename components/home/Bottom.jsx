@@ -4,28 +4,28 @@ import { Divider } from "react-native-elements";
 export const imageIcons = [
   {
     name: "Home",
-    active: require("../../assets/images/home.png"),
-    inactive: require("../../assets/images/home1.png"),
+    active:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/home.png",
+    inactive: "https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/home1.png"
   },
   {
     name: "Search",
-    active: require("../../assets/images/search--v1.png"),
-    inactive: require("../../assets/images/search--v1 (1).png"),
+    active:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/search--v1.png",
+    inactive: "https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/search--v1 (1).png"
   },
   {
     name: "Reels",
-    active: require("../../assets/images/instagram-reel.png"),
-    inactive: require("../../assets/images/videobox.png"),
+    active:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/instagram-reel.png",
+    inactive: "https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/videobox.png"
   },
   {
     name: "Notification",
-    inactive: require("../../assets/images/like--v1.png"),
-    active: require("../../assets/images/heart.png"),
+    active:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/heart.png",
+    inactive: "https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/like--v1.png"
   },
   {
     name: "Profile",
-    active: require("../../data/Images/user1.jpeg"),
-    inactive: require("../../data/Images/user1.jpeg"),
+    active:"https://raw.githubusercontent.com/govindivya/React-Native/master/data/Images/user1.jpeg",
+    inactive:"https://raw.githubusercontent.com/govindivya/React-Native/master/data/Images/user1.jpeg"
   },
 ];
 
@@ -37,7 +37,7 @@ const Icons = ({ item, active, setActive }) => {
       }}
     >
       <Image
-        source={item.name === active ? item.active : item.inactive}
+        source={{uri:(item.name === active ? item.active : item.inactive)}}
         style={
           item.name === "Profile"
             ? active === item.name
@@ -60,7 +60,7 @@ const Bottom = ({ imageIcons }) => {
       />
       <View style={styles.imagecontainer}>
         {imageIcons.map((item, index) => (
-          <Icons item={item} active={active} setActive={setActive} />
+          <Icons item={item} active={active} setActive={setActive} key={index} />
         ))}
       </View>
     </View>
@@ -70,7 +70,7 @@ const Bottom = ({ imageIcons }) => {
 const styles = StyleSheet.create({
   bottom: {
     flex: 1,
-    position: "fixed",
+    position:"absolute",
     bottom: 0,
     zIndex: 999,
     backgroundColor: "black",
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   imageicon: {
     height: 30,
     width: 30,
-    borderRadius: "50%",
+    borderRadius:15,
   },
   profilePic: {
     borderWidth: 2,

@@ -1,9 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import LoginForm from "../components/login/LoginForm";
-// const logo =require('../assets/images/insta.png')
-
-const LoginScreen = ({navigation}) => {
+import ForgotPassword from "../components/forgotpassword/ForgotPassword";
+const ForgotPasswordScreen = ({navigation}) => {
   return (
     <View style={{width:"100%"}}>
       <View style={styles.logoContainer}>
@@ -16,7 +14,7 @@ const LoginScreen = ({navigation}) => {
         {/* we can pass style property inside source as source={logo,height:100,width:100} */}
       </View>
 
-      <LoginForm navigation={navigation} />
+      <ForgotPassword navigation={navigation} />
     </View>
   );
 };
@@ -26,11 +24,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginHorizontal: 60,
     marginVertical:30
-
   },
   logo: {
     width: 100,
     height: 100,
   },
 });
-export default LoginScreen;
+export default ForgotPasswordScreen;

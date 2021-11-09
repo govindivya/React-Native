@@ -1,13 +1,18 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { getAuth } from "@firebase/auth";
 
 const Header = ({navigation}) => {
+  const auth=getAuth();
+  const signedOut=()=>{
+  auth.signOut().then(console.log("Signed Out")).catch(e=>console.log(e))
+  }
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={signedOut}>
         <Image
           style={styles.logo}
-          source={require("../../assets/images/header-logo.png")}
+          source={{uri:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/header-logo.png"}}
         />
       </TouchableOpacity>
 
@@ -17,7 +22,7 @@ const Header = ({navigation}) => {
           <TouchableOpacity onPress={()=>navigation.push('NewPostScreen')}>
             <Image
               style={styles.icon}
-              source={require("../../assets/images/plus-2-math.png")}
+              source={{uri:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/plus-2-math.png"}}
             />
           </TouchableOpacity>{" "}
         </Text>
@@ -26,7 +31,7 @@ const Header = ({navigation}) => {
           <TouchableOpacity>
             <Image
               style={styles.icon}
-              source={require("../../assets/images/like--v1.png")}
+              source={{uri:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/like--v1.png"}}
             />
           </TouchableOpacity>{" "}
         </Text>
@@ -38,7 +43,7 @@ const Header = ({navigation}) => {
             </View>
             <Image
               style={styles.icon}
-              source={require("../../assets/images/facebook-messenger.png")}
+              source={{uri:"https://raw.githubusercontent.com/govindivya/React-Native/master/assets/images/facebook-messenger.png" }}
             />
           </TouchableOpacity>{" "}
         </Text>
@@ -50,7 +55,7 @@ const Header = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
-    alignItem: "center",
+    alignItems: "center",
     flexDirection: "row",
     marginHorizontal: 20,
     marginTop:10
@@ -78,6 +83,7 @@ const styles = StyleSheet.create({
     flex:1,
     borderRadius:20,
     alignContent:"center",
+    alignItems:"center",
     justifyContent:"center",
     padding:1,
     height:20,
